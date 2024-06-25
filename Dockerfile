@@ -26,4 +26,4 @@ ENV CLI_ARGS=""
 ENV WEBUI_PORT=7860
 EXPOSE ${WEBUI_PORT}
 # 🤖 Execute start script with arguments
-#ENTRYPOINT ["/bin/bash", "-c", "./webui.sh ${WEBUI_PORT} $CLI_ARGS"]
+ENTRYPOINT ["/bin/bash", "-c", "./webui.sh ${WEBUI_PORT} $CLI_ARGS"]
