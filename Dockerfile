@@ -17,6 +17,6 @@ RUN chown -R user:user ${ROOT_DIR}
 # 👮Make the webui.sh script executable
 RUN chmod +x webui.sh
 # ⌛️ Install the webui.sh file (--exit parameter allows to only install it without without running it)
-RUN ./webui.sh -f --exit
+RUN ./webui.sh --skip-torch-cuda-test -f --exit
 ENV WEBUI_PORT=7860
 EXPOSE ${WEBUI_PORT}
