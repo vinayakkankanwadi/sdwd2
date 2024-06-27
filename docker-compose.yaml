@@ -1,7 +1,7 @@
 services:
   stable-diffusion-webui:
     container_name: stable-diffusion-webui
-    image: aauno/stable-diffusion-webui:latest
+    image: aauno/stable-diffusion-webui-docker:latest
     entrypoint: ["./webui.sh"]
     command: ["--skip-version-check","--allow-code","--enable-insecure-extension-access","--api","--listen","--xformers","--opt-channelslast"]
     volumes:
