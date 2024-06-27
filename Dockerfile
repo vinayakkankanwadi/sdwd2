@@ -21,4 +21,4 @@ RUN ./webui.sh --skip-torch-cuda-test -f --exit
 ENV WEBUI_PORT=7860
 EXPOSE ${WEBUI_PORT}
 ENTRYPOINT ["./webui.sh"]
-CMD ["--api","--listen"]
+CMD ["--skip-version-check","--allow-code","--enable-insecure-extension-access","--api","--listen","--xformers","--opt-channelslast"]
