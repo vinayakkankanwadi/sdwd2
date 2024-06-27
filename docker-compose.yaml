@@ -2,10 +2,11 @@ services:
   stable-diffusion-webui:
     container_name: stable-diffusion-webui
     image: aauno/stable-diffusion-webui-docker:latest
-    environment:
-      CLI_ARGS: "--skip-version-check --allow-code --enable-insecure-extension-access --api --listen --xformers --opt-channelslast"
+    entrypoint: ["./webui.sh"]
+    command: ["--skip-version-check","--allow-code","--enable-insecure-extension-access","--api","--listen","--xformers","--opt-channelslast"]
     volumes:
-      - /opt/stable-diffusion-webui:/stable-diffusion-webui
+      - /opt/stable-diffusion-webui/models:/stable-diffusion-webui/models
+      - /opt/stable-diffusion-webui/outputs:/stable-diffusion-webui/outputs
     ports:
       - "7860:7860"    
     restart: unless-stopped
